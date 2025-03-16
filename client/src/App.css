@@ -5,134 +5,267 @@
 }
 
 .imgs {
-  position: relative;
+  min-height: 100vh;
   height: 100%;
   width: 100%;
   padding-bottom: 20px;
+  background: url(/imgs/annie-spratt-i4qffpq18YI-unsplash.jpg);
+  background-size: cover;
 }
 
-.imgs::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url(/imgs/m-ZzOa5G8hSPI-unsplash.jpg);
-  background-color: black;
-  background-size: cover; /* Adjust to cover if needed */
-  opacity: 1; /* Change the opacity here */
-  z-index: -1; /* Makes sure it's behind all the other content */
-}
-
-.imgs::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity to control darkness */
-  z-index: -1; /* Make sure it's behind the content */
-}
-
-.main-body {
-  max-width: 700px;
-  width: 80%;
-  margin: auto;
-  background-color: hsl(199, 79%, 87%);
-
-  border: 2px solid black;
+.main {
+  height: 100%;
 }
 
 .title {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  color: rgba(243, 243, 243, 0.925); 
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 20px;
-  text-align: center;
-  margin-bottom: 100px;
+  padding: 30px;
 }
 
-li {
-  list-style: none;
+.total-container {
+  margin: 20px auto;   /* Changed to auto for horizontal centering */
+  width: 60%;          /* Adjusted for responsiveness */
+  background-color: rgba(0, 0, 0, 0.849);
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .total-profit {
-  font-family: "Oswald", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
   font-size: 2rem;
-  color: rgb(35, 76, 88); 
+  padding: 5px;
+  
+  color: rgb(205, 253, 219);
 }
 
 .total {
-  display: flex;
-  justify-content: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bolder;
-  font-size: 1.5rem;
-  margin-bottom: 50px;
+  font-size: 2rem;
+  font-weight: bold;
+  color:rgb(255, 255, 255);
+  text-align: center;
+}
+
+.refresh-total {
+  cursor: pointer;
+  color: black;
+  width: 50%;          /* Adjusted to be centered and more flexible */
+  margin: 30px auto 20px; /* Centered horizontally */
+  display: block;
+  border: 1px solid black;
+  border-radius: 25px;
+  transition: 0.3s;
+  padding: 10px 20px;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+}
+
+.refresh-total:hover {
+  transform: scale(1.1);
 }
 
 .cf-title {
-  position: relative;
-  top: 10px;
-  height: "50px";
-  width: "50%";
-  font-family:'Times New Roman', Times, serif;
-  font-optical-sizing: auto;
-  font-weight: 800;
-  font-style: normal;
-  font-size: 2.5rem;
-  color: rgb(35, 76, 88); 
-  margin: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 18px;
+  width: fit-content; /* Ensures the element only takes up the space needed */
+  margin: 35px auto;
+  color: rgb(205, 253, 219);
+  background-color: rgba(0, 0, 0, 0.849);
+  border: 1px solid black;
+  border-radius: 8px;
 }
 
 .cfContainer {
-  border: 1px solid black;
-  background-color: rgb(195, 224, 208);
-  display: grid;
-  grid-template-columns: repeat(auto-fit, 2fr);
-  gap: 20px;
-  height: 300px;
-  width: 50%;
-  padding: 10px;
-  margin: 2px;
-  overflow-y: scroll;
-}
-
-.cf {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+/* Cashflow Box Styling */
+.cf {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 4px 8px rgba(88, 74, 74, 0.1);
+  width: calc(33.333% - 20px);  /* Adjusted for responsive layout */
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+  min-width: 200px;  /* Ensures box doesn't shrink too much */
+}
+
+.cf:hover {
+  transform: translateY(-10px);
+}
+
+/* Edit Section Styling */
+.editSection {
+  display: flex;
   flex-direction: column;
-  text-align: center;
-  border-bottom: 1px solid black;
+  gap: 10px;
 }
 
+.editInput {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
 
-@media screen and (max-width: 650px) {
-  .cf-title {
-    font-size: 1.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button Styles */
+button {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.saveButton {
+  background-color: #4CAF50;
+  color: white;
+}
+.saveButton:hover {
+  background-color: #38813c;
+}
+
+.cancelButton {
+  background-color: #f44336;
+  color: white;
+}
+.cancelButton:hover {
+  background-color: #bd2626;
+}
+
+.editButton {
+  background-color: #2196F3;
+  color: white;
+}
+.editButton:hover {
+  background-color: #1767b8;
+}
+
+.deleteButton {
+  background-color: #f44336;
+  color: white;
+}
+.deleteButton:hover {
+  background-color: #bd2626;
+}
+
+/* Cashflow Details Styling */
+.cfDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.cf-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cf-amount {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cf-name, .cf-amount {
+  list-style: none ;
+  transition: color 0.8s;
+}
+
+.inputCf {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  margin: 0 auto;
+  width: 40%;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.inputCf input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.inputCf input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.btns button {
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.btns button:focus {
+  outline: none;
+}
+
+.clearBtn {
+  background-color: #f44336;
+  color: white;
+}
+.clearBtn:hover {
+  background-color: #bd2626;
+}
+
+.addCfBtn {
+  background-color: #4CAF50;
+  color: white;
+}
+.addCfBtn:hover {
+  background-color: #38813c;
+}
+
+@media (max-width: 768px) {
+  .total-container {
+    width: 80%;  /* Adjust width for smaller screens */
   }
-}
 
-@media screen and (max-width: 500px) {
-  .cf-title {
-    font-size: 1.5rem;
+  .cf {
+    width: calc(50% - 20px); /* Adjusted for smaller screens */
   }
-}
-@media screen and (max-width: 400px) {
+
+  .refresh-total {
+    width: 70%;  /* Adjust refresh button size */
+  }
+
   .cf-title {
-    font-size: 1rem;
+    font-size: 18px;  /* Smaller font for mobile devices */
+  }
+
+  .cf-name, .cf-amount {
+    font-size: 16px;  /* Adjust font size for readability */
   }
 }

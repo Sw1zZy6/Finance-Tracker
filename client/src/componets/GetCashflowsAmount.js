@@ -22,6 +22,7 @@ export default function GetCashflowsAmount() {
         } catch (error){
             return console.error("Failed to fetch cashflow", error);
         }
+
         setTotal(totalAmount);        
     };
 
@@ -32,12 +33,15 @@ export default function GetCashflowsAmount() {
 
     return (
         <div>
-            <p style={{fontSize: "2rem", position: "absolute", textAlign: "center", width: "100%"}}>{loading}</p>
+            <p style={{fontSize: "2rem", position: "relative",top: "5px" , textAlign: "center", width: "100%", marginBottom: "30px"}}>{loading}</p>
+            <div className="total-container">
+                <h2 style={{display: "flex", justifyContent: "center", }} className="total-profit">
+                    Total Profit
+                </h2>
+                <p className="total">{total}</p>
+                <button onClick={getCashflowsAmount} className="refresh-total">Press to refresh total</button>                
+            </div>
 
-            <h2 style={{display: "flex", justifyContent: "center", }} className="total-profit">
-                Total Profit
-            </h2>
-            <p className="total">{total}</p>
         </div>
     )
 }
